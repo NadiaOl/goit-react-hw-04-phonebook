@@ -1,0 +1,32 @@
+.contactLists {
+    width: 328px;
+}
+
+.contactListItem {
+    list-style: url(./phone.svg);
+
+}
+
+.contactListConteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    margin-bottom: 8px;
+    gap: 22px;
+}
+
+.userName {
+    width: 150px;
+}
+
+.listButton {
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #E3D3D9;
+    background-color: #FFEDF4;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+
+}

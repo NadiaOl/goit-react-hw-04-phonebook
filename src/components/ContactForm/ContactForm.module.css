@@ -1,0 +1,47 @@
+.phonebook {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+.phonebookTitle {
+    font-size: 36px;
+    font-style: oblique;
+    margin: 30px auto;
+}
+.phonebookSubTitle {
+    font-size: 24px;
+    font-style: oblique;
+}
+
+.phonebookForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #E3D3D9;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3)
+}
+.phonebookInput {
+    border-radius: 5px;
+    border: 1px solid #E3D3D9;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+    height: 20px;
+}
+.phonebookLable {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addButton {
+    width: 150px;
+    margin: 0 auto;
+    padding: 8px;
+    border: 1px solid #E3D3D9;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #FFEDF4;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3)
+}

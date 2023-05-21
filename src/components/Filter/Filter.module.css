@@ -1,0 +1,14 @@
+.filterLable {
+margin: 20px auto;
+font-style: oblique;
+font-size: 20px;
+}
+
+.filterInput {
+    width: 190px;
+    margin-top: 8px;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid #E3D3D9;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3)
+}
