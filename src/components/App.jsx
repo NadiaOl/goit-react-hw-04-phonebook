@@ -1,16 +1,11 @@
-import React, {Component, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {ContactForm} from './ContactForm/ContactForm';
 import {ContactList} from './ContactList/ContactList';
 import { nanoid } from 'nanoid';
 import {Filter} from './Filter/Filter'
 import css from './ContactForm/ContactForm.module.css';
 
-// let contacts = [
-//   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
-//   {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
-//   {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
-//   {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
-// ]
+
 
 export const App = () => {
 const[contacts, setContacts] = useState(
@@ -22,8 +17,7 @@ const[contacts, setContacts] = useState(
   ]
 )
 const [filter, setfilter] = useState('')
-const [name, setName] = useState('')
-const [number, setNumber] = useState('')
+
 
 useEffect(() => {
   const contactsInLocalStorage = localStorage.getItem('contacts');
@@ -38,10 +32,10 @@ useEffect(()=>{
   localStorage.setItem('contacts', JSON.stringify(contacts))
 },[contacts])
 
+
 const  deleteContact = contactId => {
-  setContacts(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
-    }));
+  setContacts(prevState => prevState.filter(contact => contact.id !== contactId),
+    );
   }
 
   const  onSubmitForm = ({name, number}) => {
@@ -53,20 +47,24 @@ const  deleteContact = contactId => {
 
       if (contacts.find(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
         alert(`${name} is already in contacts`);
-      } else { setContacts(prevState => ({
-        contacts: [newContact, ...prevState.contacts]
-      }))}
+      } else { setContacts(prevState => ( [newContact, ...prevState]
+      ))}
   }
 
   const  changeFilter = (event) => {
     setfilter(event.currentTarget.value)
   }
 
-
-    const nornalizeFilter = filter.toLowerCase();
-    const visibleContacts = contacts.filter(contact => 
-      contact.name.toLowerCase().includes(nornalizeFilter)
-    );
+    const getVisibleContacts = () => {
+      const normalizeFilter = filter.toLowerCase();
+      return contacts.filter(contact =>
+        contact.name.toLowerCase().includes(normalizeFilter))
+    }
+  
+    const visibleContacts = getVisibleContacts();
+  
+console.log("contacts :", contacts)
+console.log('filter: ', filter)
     
     return (
       <div className={css.phonebook}>
