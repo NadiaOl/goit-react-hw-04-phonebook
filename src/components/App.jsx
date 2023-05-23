@@ -62,9 +62,6 @@ const  deleteContact = contactId => {
     }
   
     const visibleContacts = getVisibleContacts();
-  
-console.log("contacts :", contacts)
-console.log('filter: ', filter)
     
     return (
       <div className={css.phonebook}>
