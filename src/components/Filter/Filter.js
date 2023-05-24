@@ -12,6 +12,6 @@ return (
 )
 }
 Filter.propTypes = {
-  onDeliteContact: PropTypes.func,
+  onChangeFilter: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
 }
